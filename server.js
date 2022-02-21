@@ -6,5 +6,6 @@ const port = process.env.PORT || 8080;
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/seatify", {
   useNewUrlParser: true,
+  useFindAndModify: false,
 });
 
