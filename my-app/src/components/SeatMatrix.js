@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Seat from "./Seat";
-import level from "../../../script/Seed.js"; // dummy data
+import level from "../script/Seed.js"; // dummy data
 import { sliceArray } from "../utils";
 import "./Seat.css";
 
