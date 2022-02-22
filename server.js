@@ -9,3 +9,9 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/seatify", {
   useFindAndModify: false,
 });
 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+app.listen(PORT, function () {
+  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+});

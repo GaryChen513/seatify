@@ -1,4 +1,10 @@
+const mongoose = require("mongoose");
+const seatSchema = require("./seat.js");
+const floorSchema = require("./floor.js");
+
+const { model } = mongoose;
+
 module.exports = {
-    Floor: require("./floor.js"),
-    Seat: require("./seat.js"), 
+    Floor: model("Floor", floorSchema),
+    Seat: model("Seat", seatSchema), 
 }
