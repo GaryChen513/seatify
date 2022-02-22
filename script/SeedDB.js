@@ -20,6 +20,7 @@ async function seed() {
 
   for (let level = 0; level < num_of_floor; level++) {
     const aFloor = new db.Floor({ floor_level: level + 1 });
+    
     for (let i = 0; i < num_of_table_per_floor; i++) {
 
       const table_num = level * num_of_table_per_floor + i;
