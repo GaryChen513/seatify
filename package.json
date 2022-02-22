@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/GaryChen513/seatify#readme",
   "dependencies": {
+    "@emailjs/browser": "^3.4.0",
     "express": "^4.17.3",
     "lodash": "^4.17.21",
     "mongoose": "^6.2.2"
