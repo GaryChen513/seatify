@@ -17,8 +17,8 @@ export default {
         return axios.get("api/floor");
     },
 
-    getFloor: function(data) {
-        return axios.get("/api/floor", data);
+    getFloor: function(num) {
+        return axios.get("/api/floor?floor_level=" + num);
     },
 
     updateFloor: function(id, data) {

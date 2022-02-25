@@ -1,23 +1,26 @@
 import React, { useState, useEffect } from "react";
 import Seat from "./Seat";
-import level from "../script/Seed.js"; // dummy data
+// import level from "../script/Seed.js"; // dummy data
 import { sliceArray } from "../utils";
 import "./Seat.css";
 
-const SeatMatrix = () => {
-  const [seats, setSeats] = useState([]);
-  const [cur_time, setCur_time] = useState(1);
+const SeatMatrix = (props) => {
+  const { seats, cur_time, onRequest, cur_floor } = props;
 
-  useEffect(() => {
-    setSeats(level.seats);
-    setCur_time(14);
-  }, []);
+  const default_seat_num = cur_floor * 32;
 
   const generateSeats = (arr, start, end) => {
     return (
       <div className="row">
         {sliceArray(arr, start, end).map((seat) => {
-          return <Seat seat={seat} cur_time={cur_time} key={seat.id} />;
+          return (
+            <Seat
+              seat={seat}
+              cur_time={cur_time}
+              onRequest={onRequest}
+              key={seat.table_num}
+            />
+          );
         })}
       </div>
     );

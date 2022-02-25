@@ -1,10 +1,10 @@
 import "./App.css";
-import SeatMatrix from "./components/SeatMatrix";
+import { View } from "./views";
 
 function App() {
   return (
     <div className="main container">
-      <SeatMatrix />
+      <View />
     </div>
   );
 }

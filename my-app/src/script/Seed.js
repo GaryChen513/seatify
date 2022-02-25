@@ -2,7 +2,7 @@
 const level = {
   _ID: 1,
   seats: [
-    { _ID: "000", occupiedTime: [9, 10, 11, 12] },
+    { _ID: "000", occupiedTime: [9, 10, 11] },
     { _ID: "001", occupiedTime: [9, 10, 11, 12] },
     { _ID: "002", occupiedTime: [9, 10, 11, 12] },
     { _ID: "003", occupiedTime: [9, 10, 11, 12] },
