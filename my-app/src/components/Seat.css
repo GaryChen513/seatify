@@ -1,4 +1,4 @@
-.seat{
+.seat {
     width: 20px;
     height: 20px;
     border-radius: 50% 50% 0px 0px;
@@ -6,29 +6,32 @@
     cursor: pointer;
 }
 
-.seat:hover{
+.seat:hover {
     transform: scale(1.1);
 }
 
-.seat-grey{
-    background-color: #ddd;
+.seat-grey {
+    /* background-color: #ddd; */
+    background-image: url("../images/white-chair-20.png");
 }
 
-.seat-green{
-    background-color: greenyellow;
+.seat-green {
+    /* background-color: greenyellow; */
+    background-image: url("../images/blue-chair-20.png");
 }
 
-.seat-red{
-    background-color: red;
+.seat-red {
+    /* background-color: red; */
+    background-image: url("../images/black-chair-20.png");
     cursor: auto;
     pointer-events: none;
 }
 
-.seat-black{
+.seat-black {
     background-color: black;
 }
 
-.seat-occupied{
+.seat-occupied {
     background-color: black;
     cursor: auto;
     pointer-events: none;
@@ -39,15 +42,15 @@
     display: flex;
 }
 
-.row{
+.row {
     justify-content: center;
     align-items: flex-start;
     display: flex;
 }
 
-.col-md-2{
+.col-md-2 {
     padding: 0px 10px;
 }
-.col-md-6{
+.col-md-6 {
     padding: 0px 25px;
 }
