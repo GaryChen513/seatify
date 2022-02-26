@@ -1,14 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  Row,
-  Col,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  Input,
-  Button,
-} from "reactstrap";
+import { Row, Col, Input, Button } from "reactstrap";
 import Selector from "../../components/Selector";
 import SeatMatrix from "../../components/SeatMatrix.js";
 import API from "../../utils/API";
@@ -49,7 +40,6 @@ const Book = (props) => {
       })
       .catch((err) => console.log(err));
   };
-
 
   const getCurrentDate = () => {
     const dater = new Date();

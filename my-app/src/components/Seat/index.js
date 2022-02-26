@@ -3,7 +3,7 @@ import "../Seat.css";
 import { RequestContext } from "../../views";
 
 const Seat = (props) => {
-  const { seat, cur_time } = props;
+  const { seat, cur_time, isDisabled } = props;
   const [color, setColor] = useState("");
   const { request, onRequest } = useContext(RequestContext);
 
@@ -15,6 +15,11 @@ const Seat = (props) => {
   };
 
   useEffect(() => {
+    if (isDisabled) {
+      setColor("seat-red");
+      return;
+    }
+
     if (seat.occupiedTime.includes(cur_time)) {
       setColor("seat-occupied");
     } else {

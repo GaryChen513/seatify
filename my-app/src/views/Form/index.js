@@ -2,33 +2,62 @@ import React, { useState } from "react";
 import "./form.css";
 import API from "../../utils/API.js";
 import { message } from "antd";
+import { send } from "@emailjs/browser";
 
 const Form = (props) => {
-  const [firstName, setFirstName] = useState("");
-  const [email, setEmail] = useState("");
   const [people, setPeople] = useState([]);
   const { request, setRequest, setPage } = props;
 
-  const handleSubmit = (e) => {
+  const [toSend, setToSend] = useState({
+    from_name: "booking system",
+    to_name: "",
+    reply_to: "",
+  });
+
+  const handleSubmit = async (e) => {
     //event object
     e.preventDefault(); //important!!! not refreshing the page
-    if (firstName && email) {
-      for (const id in request) {
-        const occupiedTime = request[id];
+    if (toSend.to_name && toSend.reply_to) {
+      const person = {
+        id: new Date().getTime().toString(),
+        firstName: toSend.to_name,
+        email: toSend.reply_to,
+      }; // same --> const person = {firstName, email}
 
-        API.updateSeat(id, { occupiedTime })
-          .then((res) => {
-            setRequest({});
-            message.success("Article Updated");
-          })
-          .catch((err) => console.log(err));
-      }
+      setPeople((people) => {
+        return [...people, person];
+      });
+
+      await submitRequest();
+
+      send("service_gmail", "template_01", toSend, "user_UpSYAJoBV5dAAhT9qL1QX")
+        .then((response) => {
+          console.log("SUCCESS!", response.status, response.text);
+        })
+        .catch((err) => {
+          console.log("FAILED...", err);
+        });
 
       setPage(1);
-    } else {
-      console.log("empty values");
     }
   };
+
+  const handleChange = (e) => {
+    setToSend({ ...toSend, [e.target.name]: e.target.value });
+  };
+
+  function submitRequest() {
+    for (const id in request) {
+      const occupiedTime = request[id];
+
+      API.updateSeat(id, { occupiedTime })
+        .then((res) => {
+          setRequest({});
+          message.success("Seat saved");
+        })
+        .catch((err) => console.log(err));
+    }
+  }
 
   return (
     <>
@@ -39,9 +68,9 @@ const Form = (props) => {
             <input
               type="text"
               id="firstName"
-              name="firstName"
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
+              name="to_name"
+              value={toSend.to_name}
+              onChange={handleChange}
             />
           </div>
 
@@ -50,9 +79,9 @@ const Form = (props) => {
             <input
               type="text"
               id="email"
-              name="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              name="reply_to"
+              value={toSend.reply_to}
+              onChange={handleChange}
             />
           </div>
 
@@ -60,6 +89,7 @@ const Form = (props) => {
             Click here to book
           </button>
         </form>
+
         {people.map((person, index) => {
           const { id, firstName, email } = person;
           return (

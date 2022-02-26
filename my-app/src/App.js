@@ -1,5 +1,6 @@
 import "./App.css";
 import { View } from "./views";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (

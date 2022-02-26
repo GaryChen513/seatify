@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { FaBars, FaTwitter } from "react-icons/fa";
 import { social } from "./social";
-import logo from "../../images/Rev.png";
+import logo from "../../images/logo.png";
 import { NavItem, NavLink } from "reactstrap";
 import "./navbar.css";
 
@@ -12,7 +12,6 @@ const Navbar = (props) => {
   const toggleLinks = () => {
     setShowLinks(!showLinks);
   };
-
   useEffect(() => {
     const linksHeight = linksRef.current.getBoundingClientRect().height;
     if (showLinks) {
@@ -21,7 +20,6 @@ const Navbar = (props) => {
       linksContainerRef.current.style.height = "0px";
     }
   }, [showLinks]);
-
   return (
     <nav>
       <div className="nav-center">
@@ -34,7 +32,13 @@ const Navbar = (props) => {
         <div className="links-container" ref={linksContainerRef}>
           <ul className="links" ref={linksRef}>
             <NavItem className="link-btn">
-              <NavLink href="/Main/">Home</NavLink>
+              <NavLink
+                onClick={() => {
+                  props.setPage(0);
+                }}
+              >
+                Home
+              </NavLink>
             </NavItem>
             <NavItem className="link-btn">
               <NavLink
