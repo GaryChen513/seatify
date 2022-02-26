@@ -15,7 +15,6 @@ function View() {
 
   useEffect(() => {
     console.log(request);
-    console.log(onRequest);
   }, [request]);
 
   function onRequest(id, occupiedTime) {
@@ -25,16 +24,18 @@ function View() {
   }
 
   return (
-    <RequestContext.Provider value={{request, onRequest}}>
+    <RequestContext.Provider value={{ request, onRequest }}>
       <div>
         <Navbar setPage={setPage} />
         {page === 0 ? <Home setPage={setPage} /> : null}
         {page === 1 ? <Book setPage={setPage} onRequest={onRequest} /> : null}
-        {page === 2 ? <Form setPage={setPage} requset={request} /> : null}
+        {page === 2 ? (
+          <Form setPage={setPage} request={request} setRequest={setRequest} />
+        ) : null}
         {page === 3 ? <About setPage={setPage} /> : null}
       </div>
     </RequestContext.Provider>
   );
 }
 
-export {View, RequestContext};
+export { View, RequestContext };

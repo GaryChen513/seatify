@@ -1,31 +1,35 @@
 import React, { useState } from "react";
 import "./form.css";
+import API from "../../utils/API.js";
+import { message } from "antd";
 
-const Form = () => {
+const Form = (props) => {
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
   const [people, setPeople] = useState([]);
+  const { request, setRequest, setPage } = props;
 
   const handleSubmit = (e) => {
     //event object
     e.preventDefault(); //important!!! not refreshing the page
     if (firstName && email) {
-      // console.log(firstName, email);
-      const person = {
-        id: new Date().getTime().toString(),
-        firstName: firstName,
-        email: email,
-      }; // same --> const person = {firstName, email}
-      console.log(person);
-      setPeople((people) => {
-        return [...people, person];
-      });
-      setFirstName("");
-      setEmail("");
+      for (const id in request) {
+        const occupiedTime = request[id];
+
+        API.updateSeat(id, { occupiedTime })
+          .then((res) => {
+            setRequest({});
+            message.success("Article Updated");
+          })
+          .catch((err) => console.log(err));
+      }
+
+      setPage(1);
     } else {
       console.log("empty values");
     }
   };
+
   return (
     <>
       <article>
@@ -55,7 +59,6 @@ const Form = () => {
           <button type="submit" onClick={handleSubmit}>
             Click here to book
           </button>
-          
         </form>
         {people.map((person, index) => {
           const { id, firstName, email } = person;

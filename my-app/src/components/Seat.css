@@ -18,6 +18,12 @@
     background-color: greenyellow;
 }
 
+.seat-red{
+    background-color: red;
+    cursor: auto;
+    pointer-events: none;
+}
+
 .seat-black{
     background-color: black;
 }

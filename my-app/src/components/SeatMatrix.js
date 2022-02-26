@@ -1,18 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Seat from "./Seat";
 // import level from "../script/Seed.js"; // dummy data
 import { sliceArray } from "../utils";
 import "./Seat.css";
+import { RequestContext } from "../views";
 
 const SeatMatrix = (props) => {
-  const { seats, cur_time, onRequest, cur_floor } = props;
+  const { seats, cur_time, cur_floor } = props;
+  const { request, onRequest } = useContext(RequestContext);
+
+  useEffect(() => {}, [request]);
 
   const default_seat_num = cur_floor * 32;
 
   const generateSeats = (arr, start, end) => {
     return (
       <div className="row">
-        {sliceArray(arr, start, end).map((seat) => {
+        {sliceArray(arr, start, end).map((seat, index) => {
           return (
             <Seat
               seat={seat}

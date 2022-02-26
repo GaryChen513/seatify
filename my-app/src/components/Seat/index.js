@@ -1,11 +1,18 @@
-import React, { useState, useEffect , useContext} from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "../Seat.css";
 import { RequestContext } from "../../views";
 
 const Seat = (props) => {
   const { seat, cur_time } = props;
-  const [ color, setColor] = useState("");
-  const { request, onRequest } = useContext(RequestContext)
+  const [color, setColor] = useState("");
+  const { request, onRequest } = useContext(RequestContext);
+
+  const SEAT_OPTION = {
+    unoccupied: "seat-grey",
+    occupied: "seat-black",
+    selected: "seat-green",
+    disabled: "seat-red",
+  };
 
   useEffect(() => {
     if (seat.occupiedTime.includes(cur_time)) {
@@ -14,32 +21,38 @@ const Seat = (props) => {
       const id = seat._id;
 
       if (id in request && request[id].includes(cur_time)) {
-        setColor("seat-green")
+        setColor("seat-green");
       } else {
         setColor("seat-grey");
       }
     }
   }, [cur_time]);
 
-  function handleClick(e) {
+  async function handleClick(e) {
     e.preventDefault();
 
     if (color === "seat-occupied") {
       return;
     }
 
-    const occupiedTime = seat.occupiedTime;
+    const occupiedTime = [...seat.occupiedTime];
     const id = seat._id;
+
+    if (id in request) {
+      for (const time of request[id]) {
+        occupiedTime.push(time);
+      }
+    }
 
     if (color === "seat-grey") {
       setColor("seat-green");
       occupiedTime.push(cur_time);
     } else {
       setColor("seat-grey");
-      seat.occupiedTime.pop();
+      occupiedTime.pop();
     }
 
-    onRequest(id, occupiedTime);
+    await onRequest(id, occupiedTime);
   }
 
   return (
