@@ -5,7 +5,7 @@ body {
 .typewrite {
   font-family: Georgia, sans-serif;
   font-size: 2.5rem;
-  color: #4865a3;
+  color: #294581;
   padding-bottom: 1.8%;
   padding-right: 3%;
   padding-left: 3%;
@@ -34,16 +34,16 @@ body {
 }
 
 .image {
-  width: 30px;
-  color: rgb(236, 221, 152);
-  /* padding-right: 30px; */
+  vertical-align: middle;
 }
 
 .text {
-  padding-left: 20px;
+  display: "flex";
+  text-align: "center";
 }
 
 .text-p {
+  text-align: "justify";
   color: #344f88;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }

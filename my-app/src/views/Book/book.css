@@ -1,5 +1,5 @@
 body {
-  font-family: ABeeZee, sans-serif;
+  font-family: Georgia, sans-serif;
 }
 
 .seat-row {
@@ -7,6 +7,7 @@ body {
 }
 
 .seat-booking {
+  color: #413f3d;
   font-size: 2.5rem;
   padding-bottom: 1.8%;
   padding-right: 3%;
@@ -18,15 +19,16 @@ body {
   font-size: 1.2rem;
   padding: 2% 8%;
   border-radius: 25px;
-  background-color: hsl(44, 22%, 59%);
+  background-color: #4865a3;
   border: 2px white solid;
   font-family: ABeeZee, sans-serif;
 }
 
 .book-table-btn:hover {
-  color: #a7874c;
+  color: #4865a3;
+  font-weight: 600;
   background-color: white !important;
-  border: 2px solid black !important;
+  border: 2px solid #4865a3 !important;
 }
 
 @media (min-width: 768px) {
@@ -35,6 +37,7 @@ body {
     padding: 0.5% 5%;
   }
 }
+
 .booking-dropdown {
   width: 85%;
   padding: 4% 0;
@@ -78,4 +81,10 @@ body {
   .booking-dropdown {
     font-size: 1.2rem;
   }
+}
+
+.reservation-error {
+  color: #c0392b;
+  font-size: 1.1rem;
+  padding-bottom: 3%;
 }
