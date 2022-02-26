@@ -5,7 +5,7 @@ const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 8080;
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/seatifyDB", {
+mongoose.connect("mongodb+srv://bookingsystem:bookingsystem@cluster0.yyymx.mongodb.net/seatifyDB?retryWrites=true&w=majority", {
   useNewUrlParser: true,
 });
 
