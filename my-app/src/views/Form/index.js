@@ -85,6 +85,15 @@ const Form = (props) => {
             />
           </div>
 
+          <div className="form-control">
+            <label htmlFor="email">Phone: </label>
+            <input
+              type="text"
+              id="email"
+              name="reply_to"
+            />
+          </div>
+
           <button type="submit" onClick={handleSubmit}>
             Click here to book
           </button>
@@ -95,7 +104,7 @@ const Form = (props) => {
           return (
             <div className="item" key={id}>
               <h4>{firstName}</h4>
-              <p>{email}</p>
+              <p>{email}</p >
             </div>
           );
         })}

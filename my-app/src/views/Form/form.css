@@ -7,7 +7,7 @@
 }
 body {
   font-family: Georgia, sans-serif;
-  background: hsl(210, 36%, 96%);
+  background: hsl(210, 6%, 87%);
   color: #4865a3;
   line-height: 1.5;
   font-size: 0.875rem;
@@ -84,7 +84,7 @@ p {
 
 .container {
   text-align: center;
-  margin-top: 5rem;
+  margin-top: 3rem;
 }
 .btn {
   display: inline-block;
@@ -132,50 +132,38 @@ p {
 .item p {
   margin-bottom: 0;
 }
-.modal {
-  position: absolute;
-  top: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #fff;
-  display: inline-block;
-  padding: 0.25rem 1rem;
-  border-radius: 0.25rem;
-  text-transform: capitalize;
-}
-
 .modal p {
   margin-bottom: 0;
   color: hsl(360, 67%, 44%);
 }
 .form {
-  background: #fff;
+  background: #0c3c833d;
   max-width: 450px;
   margin: 0 auto;
   margin-bottom: 4rem;
-  padding: 1rem 2rem;
+  padding: 4rem 4rem;
   border-radius: 0.25rem;
 }
 .form input {
   background: hsl(210, 36%, 96%);
   border-color: transparent;
   border-radius: 0.25rem;
-  padding: 0.25rem 0.5rem;
+  padding: 0.5rem 0.5rem;
 }
 .form-control {
-  margin: 0.5rem 0;
+  margin: 1rem 0;
   display: grid;
   grid-template-columns: 100px 1fr;
   align-items: center;
 }
 .form button {
   display: inline-block;
-  background: #222;
+  background: rgb(62, 93, 150);
   color: #fff;
   border-color: transparent;
   margin-top: 1rem;
   letter-spacing: 0.1rem;
-  padding: 0.15rem 0.25rem;
+  padding: 1rem 2rem;
   text-transform: capitalize;
   border-radius: 0.25rem;
   cursor: pointer;

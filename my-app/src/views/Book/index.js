@@ -51,14 +51,19 @@ const Book = (props) => {
   };
 
   return (
-    <div>
+    <div className="booking-block">
+
+      <Row noGutters className="text-center align-items-center seat-row ">
+        <h1 style={{color: '#294581'}} >Select the time and the floor you want!</h1>
+      </Row>
       <Row noGutters className="text-center align-items-center seat-row ">
         <Col xs="12" sm="4">
           <Selector
+            className="booking-dropdown"
             itemList={getCurrentDate()}
             setSelectedItem={setDate}
             key="date"
-          />
+            />
         </Col>
 
         <Col xs="12" sm="4">
@@ -78,7 +83,7 @@ const Book = (props) => {
         </Col>
       </Row>
 
-      <Row>
+      <Row style = {{marginTop : 30 }}>
         <SeatMatrix
           seats={seats}
           cur_time={cur_time}
@@ -88,9 +93,10 @@ const Book = (props) => {
         />
       </Row>
 
-      <Row>
+      <Row style = {{marginTop : 50 }}>
         <button
           className="book-table-btn"
+          style={{height: '50px', width : '300px'}} 
           onClick={() => {
             props.setPage(2);
           }}
