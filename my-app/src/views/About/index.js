@@ -17,7 +17,7 @@ const About = () => {
                     }}
                 >
                     <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
-                    Know Who <strong>I'M</strong>
+                    Our <strong>Motivation</strong>
                     </h1>
                     <p style={{ textAlign: "justify", fontSize: "1.3em" }}>
                         We have friends tested positive for covid after going to University and cinema because the booking system did not block the seats around them. 
@@ -54,7 +54,7 @@ const About = () => {
                     }}
                 >
                     <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
-                    Know Who <strong>I'M</strong>
+                    Our <strong>Mission</strong>
                     </h1>
                     <p style={{ textAlign: "justify", fontSize: "1.3em" }}>
                         Our booking system automatically disable seats around the selected seat(s), keeping at least 1.5m away from people around you. 
