@@ -16,6 +16,8 @@ If your README is long, add a table of contents to make it easy for users to fin
 
 - [Installation](#installation)
 - [Usage](#usage)
+- [Features](#features)
+- [Team](#our-group-memebers)
 
 ## Installation
 
@@ -28,30 +30,36 @@ If your README is long, add a table of contents to make it easy for users to fin
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+Our booking system automatically disable seats around the selected seat(s), keeping at least 1.5m away from people around you.
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+This system can be applied to many areas, from University, office to cinema and flight.
 
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+Users are allowed to use Augmented Reality (AR) to check which seat is available or use this technology to navigate their way in the cinema where there’s no light! Even if there’s no any disease, we can still adapt our system for normal daily use!
 
-## Our Group Memebers
+We believe that this system can help to keep us safe and healthy, and benefits our social life.
 
-[Kayley]()
-
-[Wendy]()
-
-[Sim]()
-
-[Gary]()
-
-[Dong]()
-
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
 
 ## Features
 
-If your project has a lot of features, list them here.
+1. Booking system
+
+2. QR Code
+
+3. AR
+
+## Our Group Memebers
+
+[Kayley](https://github.com/lovelymoon3)
+
+[Wendy](https://github.com/Ziqi222)
+
+[Sim](https://github.com/raymondsim)
+
+[Gary](https://github.com/GaryChen513)
+
+[Dong](https://github.com/a1779748)
+
+
+
+
+
