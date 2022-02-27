@@ -21,7 +21,32 @@ body {
   border-radius: 25px;
   background-color: #4865a3;
   border: 2px white solid;
-  font-family: ABeeZee, sans-serif;
+  font-family: Georgia, sans-serif;
+}
+
+.click-btn {
+  color: white;
+  font-size: 1.2rem;
+  padding: 2% 8%;
+  border-radius: 25px;
+  background-color: #4865a3;
+  border: 2px white solid;
+  font-family: Georgia, sans-serif;
+}
+
+.booking-block {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0c3c833d;
+  padding-bottom: 75px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 75px;
+  position: relative;
+  font-family: Georgia, sans-serif;
 }
 
 .book-table-btn:hover {
@@ -40,28 +65,30 @@ body {
 
 .booking-dropdown {
   width: 85%;
-  padding: 4% 0;
-  background-color: hsl(44, 22%, 59%);
-  color: white;
-  margin: 2% 0;
-  font-family: "Roboto";
+  height: 100%;
+  /* padding: 4% 0; */
+  background-color: hsla(0, 0%, 100%, 0.842);
+  color: rgb(13, 10, 53);
+  font-family: Georgia, sans-serif;
   font-size: 1.1rem;
-  border: none;
+  border: 2px #4865a3 solid;
   border-radius: 5px;
   text-align: center;
 }
-.booking-dropdown:hover {
+
+/* .booking-dropdown:hover {
   width: 85%;
   padding: 4% 0;
   margin: 2% 0;
-  font-family: "Roboto";
-  font-size: 1.1rem;
+  font-family: Georgia, sans-serif;
+  font-size: 1rem;
   border: none;
   border-radius: 5px;
   text-align: center;
-  background-color: hsl(44, 22%, 59%);
-  color: white;
-}
+  background-color: hsl(55, 64%, 79%);
+  color: rgb(13, 10, 53);
+} */
+
 .booking-dropdown:focus {
   outline: none;
   box-shadow: none;
