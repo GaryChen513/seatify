@@ -4,10 +4,15 @@ const routes = require("./routes");
 
 const app = express();
 const PORT = process.env.PORT || 8080;
+//process.env.MONGODB_URI || "mongodb://localhost/seatifyDB"
+//"mongodb+srv://bookingsystem:bookingsystem@cluster0.yyymx.mongodb.net/seatifyDB?retryWrites=true&w=majority"
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/seatifyDB", {
-  useNewUrlParser: true,
-});
+mongoose.connect(
+  "mongodb+srv://bookingsystem:bookingsystem@cluster0.yyymx.mongodb.net/seatifyDB?retryWrites=true&w=majority",
+  {
+    useNewUrlParser: true,
+  }
+);
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

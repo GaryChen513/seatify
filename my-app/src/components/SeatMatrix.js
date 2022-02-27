@@ -18,16 +18,17 @@ const SeatMatrix = (props) => {
       <div className="row">
         {sliceArray(arr, start, end).map((seat, index) => {
           let isDisabled = false;
-          const cur_index = index + start;
+          if (!(seat._id in request)) {
+            const cur_index = index + start;
 
-          if (Math.floor((cur_index - 1) / 4) === Math.floor(cur_index / 4)) {
-            isDisabled =
-              isDisabled || checkDisable(seats[cur_index - 1], cur_time);
-          }
-          if (Math.floor((cur_index + 1) / 4) === Math.floor(cur_index / 4)) {
-            isDisabled =
-              isDisabled || checkDisable(seats[cur_index + 1], cur_time);
-          }
+            if (Math.floor((cur_index - 1) / 4) === Math.floor(cur_index / 4)) {
+              isDisabled =
+                isDisabled || checkDisable(seats[cur_index - 1], cur_time);
+            }
+            if (Math.floor((cur_index + 1) / 4) === Math.floor(cur_index / 4)) {
+              isDisabled =
+                isDisabled || checkDisable(seats[cur_index + 1], cur_time);
+          }}
 
           return (
             <Seat

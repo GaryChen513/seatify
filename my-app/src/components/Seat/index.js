@@ -31,7 +31,7 @@ const Seat = (props) => {
         setColor("seat-grey");
       }
     }
-  }, [cur_time]);
+  }, [cur_time, request]);
 
   async function handleClick(e) {
     e.preventDefault();
